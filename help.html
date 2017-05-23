@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet/less" type="text/css" href="../reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../reset.css"> -->
 <style>
 body {
   margin: 0 !important;
@@ -43,6 +43,7 @@ a {
 }
 
 a.primary {
+  display: block;
   font-size: 160%;
 }
 
@@ -83,7 +84,7 @@ a.primary {
   /*max-width: 100vw;*/
   margin: 0 auto;
   margin: 0 10%;
-  padding: 60px 0 0;
+  padding: 60px 0;
 }
 
 h1 {
@@ -94,6 +95,19 @@ h1 {
 
 p {
   font-size: 160%;
+}
+
+div#progress-bar-bg {
+  width: 100%;
+  height: 20px;
+  background: #ccc;
+  margin: 4vw 0;
+}
+
+div#progress-bar {
+  width: 30%;
+  height: 20px;
+  background: #dce477;
 }
 
 div.overlay {
@@ -148,7 +162,7 @@ div.highlight::after {
   color: white;
 
   padding: 0 0 0 20px;
-  border: dotted 0.5px white;
+  /*border: dotted 0.5px white;*/
 }
 
 span.s2 {
@@ -167,12 +181,31 @@ div.inner {
   /*background-attachment: fixed;*/
 }
 
+div.text-only {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background: #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0 8vw;
+}
+
+div.text-only h2 {
+  font-size: 200%;
+}
+
 #footer-nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   /*justify-content: space-between;*/
   flex-wrap: wrap;
+  margin: 4vw 0 0;
 }
 
 #footer-nav span {
@@ -190,14 +223,25 @@ div.inner {
 #footer-nav span:hover {
   background: #fb8267;
 }
+#footer-nav span.active {
+  background: #fb8267;
+  cursor: default;
+}
 
 </style>
 </head>
 <body>
   <div class="centered">
-    <a href="#0" class="primary">How to do a specific thing, the whole tutorial gallery</a>
+    <a href="#0" class="primary">How to do a specific thing, the whole tutorial (gallery)</a>
+    <div id="progress-bar-bg" title="30% in">
+      <div id="progress-bar"></div>
+    </div>
     <h1>3 - Step #, page title - step description, screen name</h1>
     <p>Describe what needs to be accomplished.</p>
+    <div class="nav">
+      <a href="#1">back</a>
+      <a href="#2" id="forward">forward</a>
+    </div>
     <div class="wrapper">
       <img src="img.png">
       <div id="overlay-wrapper">
@@ -208,26 +252,26 @@ div.inner {
           </div>
         </div>
       </div>
-      <div class="comment hidden">
-        <span class="s2">click here</span>
-      </div>
+      <!-- <div class="comment">
+        <span class="s2">click on the box icon or the Dropbox title</span>
+      </div> -->
       <!-- <span>step desc</span> -->
-      <div class="spacer"></div>
-    </div>
-    <div class="nav">
-      <a href="#1">back</a>
-      <a href="#2">forward</a>
+      <!-- <div class="spacer"></div> -->
+      <div class="text-only">
+        <h2>Click on the next button, or scroll or read, since there's no pic for this step.</h2>
+      </div>
     </div>
     <div id="footer-nav">
       <span>1</span>
       <span>2</span>
-      <span>3</span>
+      <span class="active">3</span>
       <span>4</span>
       <span>5</span>
       <span>6</span>
       <span>7</span>
       <span>8</span>
       <span>9</span>
+      <span>10</span>
     </div>
   </div>
   <script>
@@ -235,6 +279,9 @@ div.inner {
       var overlay = document.getElementsByClassName("overlay")[0];
       var inner = document.getElementsByClassName("inner")[0];
       var hlight = document.getElementsByClassName("highlight")[0];
+
+      var forwardBtn = document.getElementById("forward");
+      var textLyr = document.getElementsByClassName("text-only")[0];
 
       function n() {
         hlight.style.display = ((hlight.style.display!='none') ? 'none' : 'block');
@@ -244,15 +291,27 @@ div.inner {
         // hlight.className += " " + "hidden";
       };
 
+      function toggleMe() {
+        // textLyr.style.display = ((textLyr.style.display!='none') ? 'none' : 'block');
+        textLyr.outerHTML = "";
+        // BRING THE BLOCK BACK on the second click
+      };
+
       function showAlert(event) {
         alert("onclick Event detected!");
       }
 
+    function textOnly(event) {
+      forward.click = toggleMe;
+    }
+
     ( function mmm() {
-      niao.onclick = n;
-      // overlay.onclick = showAlert;
-      console.log(mew);
-      console.log(inner);
+        textOnly();
+        forward.onclick = toggleMe;
+        niao.onclick = n;
+        // overlay.onclick = showAlert;
+        console.log(overlay);
+        console.log(inner);
     })()
   </script>
 </body>
