@@ -29,7 +29,8 @@ html {
   height: 0px;
 }
 
-img {
+.wrapper img {
+  display: block;
   width: 100%;
 }
 
@@ -57,6 +58,9 @@ a.primary {
   align-items: center;
   flex: 1;
   padding: 20px;
+  font-size: 120%;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .nav a:last-child {
@@ -65,6 +69,16 @@ a.primary {
 
 .nav a:hover {
   background: #d6d6d6;
+}
+
+.nav a.inactive {
+  cursor: default;
+  text-decoration: none;
+  background: #e2e2e2;
+  color: #ccc;
+}
+.nav a.inactive:hover {
+  background: #e2e2e2;
 }
 
 /*.inner img {
@@ -86,6 +100,9 @@ h1 {
   /*border: dotted 0.5px coral;*/
   /*text-align: center;*/
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 p {
@@ -94,15 +111,16 @@ p {
 
 div.progress-bar-bg {
   width: 100%;
-  height: 20px;
+  height: 12px;
   background: #ccc;
-  margin: 4vw 0;
+  margin: 3vw 0 4vw;
 }
 
 div.progress-bar {
   width: 30%;
-  height: 20px;
+  height: 100%;
   background: #dce477;
+  background: skyblue;
 }
 
 div.overlay {
@@ -176,11 +194,11 @@ div.inner {
   /*background-attachment: fixed;*/
 }
 
-div.text-only {
+.text-only {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  background: #ccc;
+  background: rgba(200,200,200,0.6);
   position: absolute;
   top: 0;
   left: 0;
@@ -190,8 +208,9 @@ div.text-only {
   padding: 0 8vw 4vw;
 }
 
-div.text-only h2 {
+.text-only h2 {
   font-size: 200%;
+  width: 100%;
 }
 
 #footer-nav {
@@ -200,7 +219,11 @@ div.text-only h2 {
   flex-direction: row;
   /*justify-content: space-between;*/
   flex-wrap: wrap;
-  margin: 4vw 0 0;
+  margin: 8vw 0 0;
+}
+
+#footer-nav a {
+  text-decoration: none;
 }
 
 #footer-nav span {
@@ -218,6 +241,7 @@ div.text-only h2 {
 #footer-nav span:hover {
   background: #fb8267;
 }
+
 #footer-nav span.active {
   background: #fb8267;
   cursor: default;

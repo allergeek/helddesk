@@ -17,3 +17,23 @@ div.bar-4 {
 div.bar-5 {
   width: 100%;
 }
+
+.highlight {
+  display: none;
+}
+
+.wrapper {
+  /*display: none;*/
+  max-height: 400px;
+  /*text-align: center;*/
+}
+
+.wrapper img {
+  height: 400px;
+  width: auto;
+  margin: 0 auto;
+}
+
+#overlay-wrapper {
+  display: none;
+}
