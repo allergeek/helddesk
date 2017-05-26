@@ -19,21 +19,49 @@ div.bar-5 {
 }
 
 .highlight {
-  display: none;
+  /*display: none;*/
 }
 
 .wrapper {
   /*display: none;*/
-  max-height: 400px;
+  /*max-height: 60vh;*/
   /*text-align: center;*/
 }
 
 .wrapper img {
-  height: 400px;
+  max-height: 80vh;
+  max-height: 60vh;
+  max-width: 80vw;
   width: auto;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
 }
 
-#overlay-wrapper {
+.text-only {
   display: none;
+}
+
+.overlay-wrapper {
+  /*display: none;*/
+}
+
+div.screen-1 {
+  border: solid 0.6vw yellow;
+  border-radius: 50%;
+
+  position: absolute;
+  top: calc(1.4vw - 0.6vw);
+  left: calc(16vw - 0.6vw);
+  overflow: hidden;
+  /*border-radius: 4px;*/
+}
+
+.screen-1 .inner {
+  width: 6vw;
+  height: 6vw;
+
+  position: relative;
+  background: url("screen-1.png");
+  background-position: calc(-16vw) calc(-1.4vw);
+  background-size: auto 60vh;
+  background-repeat: no-repeat;
 }
