@@ -22,6 +22,7 @@ html {
   position: relative;
   margin: 0 auto;
   overflow: auto;
+  /*background: pink;*/
 }
 
 .spacer {
@@ -29,6 +30,7 @@ html {
   height: 0px;
 }
 
+img,
 .wrapper img {
   display: block;
   width: 100%;
@@ -50,6 +52,7 @@ a.primary {
 }
 
 .nav a {
+  min-width: 100px;
   background: #ddd;
   color: skyblue;
   box-sizing: border-box;
@@ -94,6 +97,7 @@ a.primary {
   margin: 0 auto;
   margin: 0 10%;
   padding: 60px 0;
+  /*overflow: auto;*/
 }
 
 h1 {
@@ -110,7 +114,7 @@ p {
 }
 
 div.progress-bar-bg {
-  width: 100%;
+  width: calc(40px * 5);
   height: 12px;
   background: #ccc;
   margin: 3vw 0 4vw;
@@ -123,9 +127,17 @@ div.progress-bar {
   background: skyblue;
 }
 
-div.overlay {
+div.overlay-wrapper {
   position: absolute;
   top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+}
+
+div.overlay {
+  position: absolute;
+  top:0;
   left: 0;
   background: rgba(0,0,0,0.6);
   width: 100%;
@@ -144,7 +156,7 @@ div.overlay-flag {
 div.highlight {
   /*box-sizing: content-box;*/
   /*background: red;*/
-  border: solid 0.6vw skyblue;
+  /*border: solid 0.6vh skyblue;*/
 
   position: absolute;
   top: calc(19vw - 0.6vw);
