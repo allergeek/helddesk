@@ -20,6 +20,37 @@ div.bar-5 {
   background: dodgerblue;
 }
 
+#guide {
+  /*background: pink;*/
+
+  display: flex;
+  x-justify-content: space-around;
+  x-align-items: stretch;
+}
+
+.wrapper {
+  /*flex-grow: 0;*/
+  flex-shrink: 0;
+  /*margin:0;*/
+
+}
+
+#text-guide {
+  padding-left: 40px;
+  max-width: 48vw;
+  /* DEPENDS on the font size */
+}
+
+#text-guide img {
+  flex-shrink: 0;
+  width: 100px;
+  /*border: solid 1px pink;*/
+}
+
+#actions {
+  display: flex;
+}
+
 .text-only {
   display: none;
 }
