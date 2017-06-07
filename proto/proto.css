@@ -1,5 +1,6 @@
 div.bar-1 {
   width: 20%;
+  background: lightblue;
 }
 
 div.bar-2 {
@@ -16,6 +17,7 @@ div.bar-4 {
 
 div.bar-5 {
   width: 100%;
+  background: dodgerblue;
 }
 
 .text-only {

@@ -23,6 +23,9 @@ html {
   margin: 0 auto;
   overflow: auto;
   /*background: pink;*/
+
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .spacer {
@@ -124,7 +127,7 @@ div.progress-bar {
   width: 30%;
   height: 100%;
   background: #dce477;
-  background: skyblue;
+  background: lightskyblue;
 }
 
 div.overlay-wrapper {
@@ -156,7 +159,7 @@ div.overlay-flag {
 div.highlight {
   /*box-sizing: content-box;*/
   /*background: red;*/
-  /*border: solid 0.6vh skyblue;*/
+  border: solid 0.6vw skyblue;
 
   position: absolute;
   top: calc(19vw - 0.6vw);
